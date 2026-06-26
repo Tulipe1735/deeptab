@@ -1,0 +1,60 @@
+{
+  "name": "deeptab",
+  "displayName": "DeepTab",
+  "description": "Bring-your-own-key AI code completion",
+  "version": "0.1.0",
+  "publisher": "deeptab",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "activationEvents": [
+    "onLanguage"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "DeepTab",
+      "properties": {
+        "deeptab.apiKey": {
+          "type": "string",
+          "description": "API Key for the model provider"
+        },
+        "deeptab.model": {
+          "type": "string",
+          "default": "deepseek-chat",
+          "description": "Model to use for completions"
+        },
+        "deeptab.endpoint": {
+          "type": "string",
+          "description": "Override the default API endpoint"
+        },
+        "deeptab.temperature": {
+          "type": "number",
+          "default": 0.2,
+          "description": "Model temperature (0-2)"
+        },
+        "deeptab.maxTokens": {
+          "type": "number",
+          "default": 256,
+          "description": "Maximum tokens per completion"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "vite build --config vite.config.mjs",
+    "dev": "vite build --watch --config vite.config.mjs",
+    "test": "vitest run --config vitest.config.mjs",
+    "test:watch": "vitest --config vitest.config.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.4.0",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0"
+  }
+}

@@ -1,0 +1,9 @@
+.worktrees
+.worktrees/
+node_modules/
+dist/
+.npm-cache/
+.runner/
+.sandbox-run/
+.env
+*.vsix
